@@ -1,2 +1,2 @@
-def range():
+def nc_range():
     pass
