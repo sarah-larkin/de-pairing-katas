@@ -1,6 +1,6 @@
-def max():
+def nc_max():
     pass
 
 
-def min():
+def nc_min():
     pass

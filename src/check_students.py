@@ -1,2 +1,2 @@
-def checkStudents():
+def check_students():
     pass
