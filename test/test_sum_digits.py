@@ -28,3 +28,25 @@ from src.sum_digits import sum_digits
 # A good next test might be to check that your function handles non-numerical characters correctly (i.e. ignores them)
 
 # E.g. sum_digits(10.5) should output 6
+def test_single_digit_number():
+    assert sum_digits(1) == 1
+    assert sum_digits(9) == 9
+    
+
+def test_multi_digit_number():
+    assert sum_digits(11) == 2
+    assert sum_digits(123) == 6
+
+def test_not_negative_number():
+    assert sum_digits(-1) == 1
+    assert sum_digits(-55) == 10
+
+def test_only_if_number():
+    assert sum_digits('a') == None
+    assert sum_digits('1!') == None
+
+
+
+
+
+
