@@ -1,20 +1,6 @@
 from src.get_century import get_century
 
-
-#TODO: correct suffix th or st or rd or nd 
-#TODO: 11th, 12th, 13th 
-#TODO: not year <1 or >9999 
-
-
-# def test_return_correct_century():
-#     input_year = 1999
-#     expected = '20'
-
-#     result = get_century(input_year)
-
-#     assert result == expected 
-
-def test_return_correct_suffix(): 
+def test_return_correct_suffix_th(): 
     input_year = 1892
     expected = '19th'
 
@@ -29,3 +15,24 @@ def test_if_year_less_than_four_digits():
     result = get_century(input_year)
 
     assert result == expected 
+
+def test_return_correct_suffix(): 
+    assert get_century(212) == "3rd"
+    assert get_century(56) == "1st"
+    assert get_century(2166) == "22nd"
+    assert get_century(2466) == "25th"
+
+def test_turn_of_century_years(): 
+    assert get_century(1999) == "20th"
+    assert get_century(2000) == "20th"
+    assert get_century(2001) == "21st"
+
+def test_years_below_20(): 
+    assert get_century(1001) == "11th"
+    assert get_century(1111) == "12th"
+    assert get_century(1222) == "13th"
+
+def test_invalid_year(): 
+    assert get_century(0) == "Invalid year"
+    assert get_century(21546231) == "Invalid year"
+

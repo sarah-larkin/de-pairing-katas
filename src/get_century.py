@@ -12,10 +12,11 @@ def get_century(year):
     # return f'{century}{suffix}'
 
 
-    century = (year - 1) // 100 + 1   
-
+    century = ((year - 1) // 100) + 1   #do year - 1 to account for the turn of the century year
        
     # Determine suffix
+    if year < 1 or year > 9999: 
+        return "Invalid year"
     if 11 <= century % 100 <= 13:
         suffix = 'th'
     else:
@@ -30,3 +31,4 @@ def get_century(year):
             suffix = 'th'
     
     return f"{century}{suffix}"
+
