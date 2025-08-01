@@ -42,8 +42,30 @@ def test_not_negative_number():
     assert sum_digits(-55) == 10
 
 def test_only_if_number():
-    assert sum_digits('a') == None
-    assert sum_digits('1!') == None
+    assert sum_digits('a') == "error"
+    assert sum_digits('1!') == "error"
+
+
+#-------------------------------------
+def test_returns_int(): 
+    assert type(sum_digits(123)) is int
+    assert isinstance(sum_digits(123), int)  #optional alternative 
+
+def test_returns_sum_when_passed_int(): 
+    assert sum_digits(123) == 6
+    assert sum_digits(222) == 6
+    assert sum_digits(1) == 1
+
+def test_returns_sum_when_passed_float(): 
+    assert sum_digits(1.2) == 3
+    assert sum_digits(22.1) == 5
+
+def test_returns_0_when_passed_0(): 
+    assert sum_digits(0) == 0
+
+def test_returns_error_when_passed_wrong_type(): 
+    assert sum_digits("one") == "error"
+    assert sum_digits([1,2,3]) == "error"
 
 
 
